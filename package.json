@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "jest": "^21.2.1",
+    "serverless-nodejs-starter-dep": "git+ssh://git@github.com/thenickdude/serverless-nodejs-starter-dep.git",
     "source-map-support": "^0.4.18"
   }
 }
