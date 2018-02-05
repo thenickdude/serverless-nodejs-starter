@@ -1,3 +1,5 @@
+var path = require("path");
+
 var slsw          = require('serverless-webpack');
 var nodeExternals = require('webpack-node-externals');
 
@@ -14,8 +16,7 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      include: __dirname,
-      exclude: /node_modules/,
+      include: [__dirname, path.join(__dirname, 'node_modules', 'serverless-node-starter-dep')]
     }]
   }
 };
