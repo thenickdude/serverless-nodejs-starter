@@ -10,13 +10,14 @@ module.exports = {
   devtool: 'source-map',
   // Since 'aws-sdk' is not compatible with webpack,
   // we exclude all node dependencies
-  externals: [nodeExternals()],
+  externals: [nodeExternals({whitelist: ["serverless-nodejs-starter-dep"]})],
   // Run babel on all .js files and skip those in node_modules
   module: {
     rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      include: [__dirname, path.join(__dirname, 'node_modules', 'serverless-node-starter-dep')]
+      include: __dirname,
+      exclude: /node_modules\/(?!serverless-nodejs-starter-dep)/
     }]
   }
 };
